@@ -30,7 +30,7 @@ inotifywait -qmr /x/printers -e create |
           # sudo sed -i '1,4d' $path$file
 
           # Use case to match the printer to print to
-	  case $PRINTER in
+	    case $PRINTER in
 
           "PDF") # Plain PDF Printer
                 if [ "$WHO" == "root" ]; then
@@ -46,7 +46,7 @@ inotifywait -qmr /x/printers -e create |
                 fi
 	      ;;
 
-	  "PDFinv") # PDF Invoice with overlay
+	      "PDFinv") # PDF Invoice with overlay
                 # pdftk $WHO.pdf background EPINV_TEMP.pdf output EPTestDoc.pdf
 	      ;;
 
@@ -58,7 +58,7 @@ inotifywait -qmr /x/printers -e create |
 	   "*") break
 	      ;;
 
-	  esac
+	    esac
         done
 
 # A email function
@@ -68,8 +68,8 @@ inotifywait -qmr /x/printers -e create |
 #                ./swaks \
 #                  -tls \
 #                  --tls-protocol tlsv1_2 \
-#                  --server mail.electroparts.co.za:587 \
-#                  --helo epapps.electroparts.co.za \
+#                  --server mail.x.co.za:587 \
+#                  --helo epapps.x.co.za \
 #                  --auth LOGIN \
 #                  --au $EMAIL \
 #                  --ap $PASS \
